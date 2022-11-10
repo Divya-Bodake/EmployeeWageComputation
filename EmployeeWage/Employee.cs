@@ -8,14 +8,30 @@ namespace EmployeeWage
 {
     internal class Employee
     {
-        public void Attendance()
+        const int IS_FULL_TIME = 0, WAGE_PER_HR = 20, FULL_TIME_HR = 8;
+        public void CalculateEmpWage()
         {
+            int emphr = 0;
+            int Empwage = 0;
+
             Random random = new Random();
-            int empCheck = random.Next(0, 2);
-            if (empCheck == 0)
-                Console.WriteLine("Employee is Present");
+            int empcheck = random.Next(0, 2);
+
+            if (empcheck == IS_FULL_TIME)
+            {
+                Console.WriteLine("employee is fulltime");
+                emphr = 8;
+            }
+
             else
-                Console.WriteLine("Employee is Absent");
+            {
+                Console.WriteLine("employee is absent");
+                emphr = 0;
+            }
+
+            Empwage = emphr * WAGE_PER_HR;
+            Console.WriteLine(Empwage);
+
         }
     }
 }
