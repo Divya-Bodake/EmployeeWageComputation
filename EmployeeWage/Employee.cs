@@ -17,21 +17,17 @@ namespace EmployeeWage
             Random random = new Random();
             int empcheck = random.Next(0, 2);
 
-            if (empcheck == IS_FULL_TIME)
+            switch (empcheck)
             {
-                Console.WriteLine("employee is fulltime");
-                emphr = 8;
-            }
-
-            else if (empcheck == PART_TIME)
-            {
-                Console.WriteLine("employee is PartTime");
-                emphr = 8;
-            }
-            else
-            {
-                Console.WriteLine("Employee Is Absent");
-                emphr = 0;
+                case IS_FULL_TIME:
+                    Console.WriteLine("Employee is FullTime");
+                    emphr = 8;
+                    break;
+                case PART_TIME:
+                    Console.WriteLine("Employee is PartTime");
+                    emphr = 8;
+                    break;
+                
             }
 
             Empwage = emphr * WAGE_PER_HR;
