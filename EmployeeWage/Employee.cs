@@ -8,7 +8,7 @@ namespace EmployeeWage
 {
     internal class Employee
     {
-        const int IS_FULL_TIME = 0, WAGE_PER_HR = 20, FULL_TIME_HR = 8;
+        const int IS_FULL_TIME = 0, WAGE_PER_HR = 20, FULL_TIME_HR = 8, PART_TIME_HR = 8, PART_TIME = 1;
         public void CalculateEmpWage()
         {
             int emphr = 0;
@@ -23,9 +23,14 @@ namespace EmployeeWage
                 emphr = 8;
             }
 
+            else if (empcheck == PART_TIME)
+            {
+                Console.WriteLine("employee is PartTime");
+                emphr = 8;
+            }
             else
             {
-                Console.WriteLine("employee is absent");
+                Console.WriteLine("Employee Is Absent");
                 emphr = 0;
             }
 
